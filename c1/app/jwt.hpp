@@ -7,7 +7,6 @@
 
 #include <string>
 #include <crow/json.h>
-#include "jwt.hpp"
 #include <jwt-cpp/jwt.h>
 
 namespace c1::jwt

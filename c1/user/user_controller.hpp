@@ -6,19 +6,22 @@
 #define USER_CONTROLLER_HPP
 
 #include <c1/app/controller.hpp>
+#include <c1/app/storage.hpp>
+#include <c1/user/user_repository.hpp>
 
-namespace c1 {
-
-class UserController: public Controller {
+namespace c1
+{
+class UserController final : public Controller
+{
 public:
-    explicit UserController(const std::string& prefix)
-        : Controller(prefix)
-    {
-    }
+    UserController(const std::string& prefix, Storage& storage, UserRepository& userRepo);
 
     void setRoutes() override;
-};
 
+private:
+    Storage& storage_;
+    UserRepository& user_repository_;
+};
 } // c1
 
 #endif //USER_CONTROLLER_HPP

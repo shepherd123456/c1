@@ -9,24 +9,14 @@
 
 namespace c1
 {
-class Controller
+struct Controller
 {
-public:
     virtual ~Controller() = default;
-
-    explicit Controller(const std::string& prefix) : bp_(prefix)
+    explicit Controller(const std::string& prefix) : self(prefix)
     {
     }
-
-    crow::Blueprint& get()
-    {
-        return bp_;
-    }
-
     virtual void setRoutes() = 0;
-
-private:
-    crow::Blueprint bp_;
+    crow::Blueprint self;
 };
 } // c1
 

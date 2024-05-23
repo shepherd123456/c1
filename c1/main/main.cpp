@@ -1,5 +1,4 @@
 #include "crow.h"
-#include <c1/app/utils.hpp>
 #include <c1/app/storage.hpp>
 #include <c1/app/jwt.hpp>
 #include <c1/app/app.hpp>
